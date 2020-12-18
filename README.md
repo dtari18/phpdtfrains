@@ -1,5 +1,5 @@
 # phpdtfrains
-Program ini digunakan untuk membantu pemasangan PHP Framework atau upload file project web PHP dengan mudah. Program ini masih sederhana tapi berguna untuk kamu sebagai web programmer atau developer yang tahap belajar. Program ini diperuntukkan untuk hosting gratis. 
+Program ini digunakan untuk membantu pemasangan PHP Framework atau upload file project web PHP dengan mudah. Program ini masih sederhana tapi berguna untuk kamu sebagai web programmer atau developer yang tahap belajar. Program ini diperuntukkan untuk hosting gratis. Program ini versi 0.1 dan menggunakan bahasa pemrograman PHP Native.
 
 # Panduan Singkat dalam Penggunaan Situs Ini :
 1. Upload Project Website yang Ada.
