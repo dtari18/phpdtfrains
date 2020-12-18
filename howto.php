@@ -38,10 +38,10 @@
 <center><h3>Panduan Singkat dalam Penggunaan Situs Ini :</h3></center><br/>
 <div class="container">
   <h4>1. Upload Project Website yang Ada.</h4>
-  <p>a) Pilihlah form "Upload Project" untuk memasukkan project website milik kamu yang ada atau telah dibuat.<br>
+  <p>a) Pilihlah form "Upload Project" untuk memasukkan project website milik kamu yang ada atau telah dibuat.<br/>
   b) Pindahkan project web yang telah diupload ke folder html_public, home/www, atau direktori home yang terdapat di hosting gratis melalui pengaturan File Manager di Control Panel pada hosting masing-masing.</p>
   <h4>2. Membuat Project Website Baru dengan PHP Framework</h4>
-  <p>a) Pilihlah form "Install PHP Framework" untuk membuat project website baru dengan sesuai memilih PHP Framework dengan sesuai keinginan atau kebutuhan.<br>
+  <p>a) Pilihlah form "Install PHP Framework" untuk membuat project website baru dengan sesuai memilih PHP Framework dengan sesuai keinginan atau kebutuhan.<br/>
   b) Pindahkan project web yang telah diupload ke folder html_public, home/www, atau direktori home yang terdapat di hosting gratis melalui pengaturan File Manager di Control Panel pada hosting masing-masing.</p>
   <br/>
   <p>Kamu tidak perlu melakukan extract project website lagi dalam upload project web atau pemasangan PHP Framework secara manual lagi. Kamu tinggal ngoding project web sambil ngopi saja.</p> 
