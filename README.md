@@ -4,6 +4,7 @@ Program ini digunakan untuk membantu pemasangan PHP Framework atau upload file p
 # Panduan Singkat dalam Penggunaan Situs Ini :
 1. Upload Project Website yang Ada.
 a) Pilihlah form "Upload Project" untuk memasukkan project website milik kamu yang ada atau telah dibuat.
+
 b) Pindahkan project web yang telah diupload ke folder html_public, home/www, atau direktori home yang terdapat di hosting gratis melalui pengaturan File Manager di Control Panel pada hosting masing-masing.
 
 2. Membuat Project Website Baru dengan PHP Framework
