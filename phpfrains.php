@@ -176,7 +176,7 @@ if(isset($_POST['proses'])){
   </form>
   
   <div class="card">
-  <form action="proses.php" method="post" enctype="multipart/form-data">
+  <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
      <div class="card-body">
       <h5 class="card-title">Install PHP Framework&nbsp;</h5>
       <p class="card-text">Gunakan fitur ini untuk memasang project baru dengan menggunakan
