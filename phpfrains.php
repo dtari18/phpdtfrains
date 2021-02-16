@@ -217,7 +217,7 @@ if(isset($_POST['proses'])){
 <p>3. Klik Folder "public_html" atau "www".</p>
 <p>4. Klik Upload di dalam folder tersebut.</p>
 <p>5. Pilihlah file "phpfrains.php", klik Open atau OK</p>
-<p>6. Buka situs http://namadomain.com/phpfrains.php </p>
+<p>6. Buka situs http://namadomain.com/phpfrains.php atau http://namadomain.com/phpfrains/phpfrains.php (Git Clone)</p>
 <p>Ada perbedaan step by step yang sedikit pada masing-masing hosting gratis.</p>
 </div>
 <hr />
