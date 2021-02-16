@@ -1,3 +1,85 @@
+<?php
+if(isset($_POST['proses'])){
+    $id = $_POST['proses'];
+    //Pemilihan untuk upload project website yang ada.
+    if($id == '1'){
+        // ambil data file
+        $namaFile = $_FILES['fileproject']['name'];
+        $namaSementara = $_FILES['fileproject']['tmp_name'];
+
+        // tentukan lokasi file akan dipindahkan
+        $dirUpload = "";
+
+        // pindahkan file
+        $terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+        
+        if ($terupload) {
+            $zip = new ZipArchive; 
+            
+            // Zip File Name 
+            if ($zip->open($namaFile) === TRUE) { 
+                // Unzip Path 
+                $zip->extractTo('.'); 
+                $zip->close(); 
+                header('Location:phpfrains.php?tipe=1&hasil=1'); 
+            } else { 
+                header('Location:phpfrains.php?tipe=1&hasil=2'); 
+            } 
+        } else {
+        echo "Upload Gagal!";
+        }
+    }else if($id == '2'){
+    //Pemilihan untuk memulai project baru dengan menggunakan PHP Framework
+        $framework = $_POST['framework'];
+        $download = array('','https://codeload.github.com/bcit-ci/CodeIgniter/legacy.zip/3.1.11','https://codeload.github.com/codeigniter4/framework/zip/v4.0.4','https://codeload.github.com/laravel/laravel/zip/master','https://codeload.github.com/cakephp/cakephp/zip/master','https://packages.zendframework.com/releases/ZendFramework-2.4.13/ZendFramework-minimal-2.4.13.zip','https://ftp.drupal.org/files/projects/drupal-9.0.7.zip','https://codeload.github.com/joomla/joomla-cms/zip/staging','https://codeload.github.com/slimphp/Slim/zip/4.x','https://codeload.github.com/slimphp/Slim/zip/3.x','https://codeload.github.com/yiisoft/yii2/zip/master');
+        
+        $url = $download[$framework]; 
+  
+        // Initialize the cURL session 
+        $ch = curl_init($url); 
+  
+        // Inintialize directory name where 
+        // file will be save 
+        $dir = './'; 
+  
+        // Use basename() function to return 
+        // the base name of file  
+        $file_name = basename($url); 
+  
+        // Save file into file location 
+        $save_file_loc = $dir . $file_name . ".zip"; 
+  
+        // Open file  
+        $fp = fopen($save_file_loc, 'wb'); 
+  
+        // It set an option for a cURL transfer 
+        curl_setopt($ch, CURLOPT_FILE, $fp); 
+        curl_setopt($ch, CURLOPT_HEADER, 0); 
+  
+        // Perform a cURL session 
+        curl_exec($ch); 
+  
+        // Closes a cURL session and frees all resources 
+        curl_close($ch); 
+  
+        // Close file 
+        fclose($fp);
+        $zip = new ZipArchive; 
+            
+            // Zip File Name 
+            if ($zip->open($file_name . ".zip") === TRUE) { 
+                // Unzip Path 
+                $zip->extractTo('.'); 
+                $zip->close(); 
+                header('Location:phpfrains.php?tipe=2&hasil=1');
+                unlink($file_name . ".zip"); 
+            } else { 
+               header('Location:phpfrains.php?tipe=2&hasil=2');
+            } 
+
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +91,7 @@
     <meta name="author" content="Dwi Ayu Lestari (@dtari18)">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/3fdb1745c3.js" crossorigin="anonymous"></script>
     <title>PHP Framework Installer</title>
      <style type="text/css">
       .footerteks1{
@@ -23,13 +105,13 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a href="index.php" class="navbar-brand">PFI</a>
+    <a href="phpfrains.php" class="navbar-brand">PFI</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="howto.php">How to?</a>
+      <li>
+        <a class="nav-link" href="#howto">How To?</a>
       </li>
     </ul>
   </div>
@@ -44,7 +126,8 @@
   <p>Silahkan menggunakan aplikasi web ini sebagai solusi dalam melakukan upload file atau project dengan batasan yang telah
   ditentukan oleh pihak hosting melalui php.ini. Situs ini juga bisa memasang web berbasis framework seperti CodeIgniter atau
    Laravel.</p>
-  <a class="btn btn-primary btn-lg" href="" role="button"><i class="fas fa-users"></i>&nbsp;Github</a>
+  <a class="btn btn-primary btn-lg" href="https://github.com/dtari18/phpfrains" target="_blank" role="button"><i class="fas fa-users"></i>&nbsp;Github</a>
+  <a class="btn btn-primary btn-lg" href="https://blog.phpfrains.my.id" target="_blank" role="button"><i class="fas fa-book-open"></i>&nbsp;Blog</a>
 </div>
 </div>
 <hr/>
@@ -70,7 +153,7 @@
   ?>  
   <div class="card-deck">
   <div class="card" >
-  <form action="proses.php" method="post" enctype="multipart/form-data">
+  <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
     <div class="card-body">
       <h5 class="card-title">Upload Project&nbsp;</h5>
       <p class="card-text">Gunakan fitur ini untuk mengupload project web yang kamu miliki baik itu native
@@ -125,12 +208,37 @@
         </form>
         </div>
     </div>
-<br/><br/><br/><br/><br/>
-
+<hr/>
+</div>
+<center class="hotwo"><h3>Panduan Pemasangan Aplikasi Ini ke dalam Hosting Gratis :</h3></center><br/>
+<div class="container">
+<p>1. Masuk ke Control Panel pada hosting gratis kamu</p>
+<p>2. Klik File Manager di Control Panel.</p>
+<p>3. Klik Folder "public_html" atau "www".</p>
+<p>4. Klik Upload di dalam folder tersebut.</p>
+<p>5. Pilihlah file "phpfrains.php", klik Open atau OK</p>
+<p>6. Buka situs http://namadomain.com/phpfrains.php </p>
+<p>Ada perbedaan step by step yang sedikit pada masing-masing hosting gratis.</p>
+</div>
+<hr />
+<center><h3>Perhatian Sebelum Upload Project :</h3></center><br/>
+<div class="container">
+  <p align="justify">Masing-masing pihak penyedia hosting gratis memberikan batasan upload file maksimal 2 MB sampai dengan 10 MB. Apabila ingin upload project website dengan berukuran file lebih dari batasan (limit), kamu bisa mengedit pada php.ini sendiri atau minta bantuan kepada penyedia hosting karena pihak pengembang ini belum menyediakan file custom php.ini sendiri.</p>
+  <p>Aplikasi ini juga berlaku untuk hosting berbayar, disini kami memfokuskan untuk pengguna hosting gratis dalam memudahkan untuk menciptakan project website yang berguna bagi diri-sendiri dan orang lain.</p>
+  <p>Perhatikan versi PHP yang digunakan pada hosting gratis sebelum melakukan pembuatan project web baru maupun upload project web yang ada, mencegah kesalahan aplikasi berbasis web yang disebabkan versi PHP yang tidak mendukung. Kamu bisa mengubah versi PHP melalui Control Panel yang disediakan hosting gratis.</p>
+</div>
+<hr />
+<center><h3>Kontak Developer :</h3></center><br/>
+<div class="container">
+  <p><i class="fas fa-id-card"></i> Dwi Ayu Lestari</p>
+  <p><i class="fab fa-whatsapp"></i> 085207364117</p>
+  <p><i class="fab fa-facebook-square"></i> fb.com/dtari18</p>
+  <p><i class="fab fa-telegram"></i> dtari18 / 085207364117</p>
+  <p></p>
 </div>
 <footer id="sticky-footer" class="py-4 bg-info text-white-50">
     <div class="container text-center">
-      <small class="footerteks1">Copyright 2020 &copy; PHP Framework Installer Versi 0.1, Developed By Dwi Ayu Lestari</small>
+      <small class="footerteks1">Copyright 2021 &copy; PHP Framework Installer Versi 0.1, Developed By Dwi Ayu Lestari</small>
     </div>
 </footer>
 
