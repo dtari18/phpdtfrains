@@ -21,9 +21,8 @@ Kamu tidak perlu melakukan extract project website lagi dalam upload project web
 2. Klik File Manager di Control Panel.
 3. Klik Folder "public_html" atau "www".
 4. Klik Upload di dalam folder tersebut.
-5. Pilihlah file "phpdtfrains.zip", klik Open atau OK
-6. Extract file .zip tersebut.
-7. Buka situs http://namadomain.com/phpdtfrains/index.php
+5. Pilihlah file "phpfrains.php", klik Open atau OK
+7. Buka situs http://namadomain.com/phpfrains.php atau http://namadomain.com/phpfrains/phpfrains.php (Git Clone)
 
 Ada perbedaan step by step yang sedikit pada masing-masing hosting gratis.
 
