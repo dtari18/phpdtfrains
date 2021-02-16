@@ -108,7 +108,7 @@ if(isset($_POST['proses'])){
     <a href="phpfrains.php" class="navbar-brand">PFI</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="frains.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li>
         <a class="nav-link" href="#howto">How To?</a>
@@ -210,7 +210,7 @@ if(isset($_POST['proses'])){
     </div>
 <hr/>
 </div>
-<center class="hotwo"><h3>Panduan Pemasangan Aplikasi Ini ke dalam Hosting Gratis :</h3></center><br/>
+<center id="hotwo"><h3>Panduan Pemasangan Aplikasi Ini ke dalam Hosting Gratis :</h3></center><br/>
 <div class="container">
 <p>1. Masuk ke Control Panel pada hosting gratis kamu</p>
 <p>2. Klik File Manager di Control Panel.</p>
