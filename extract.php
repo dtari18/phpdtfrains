@@ -21,7 +21,8 @@ if(isset($_POST['proses'])){
                 // Unzip Path 
                 $zip->extractTo('.'); 
                 $zip->close(); 
-                header('Location:extract.php?tipe=1&hasil=1'); 
+                header('Location:extract.php?tipe=1&hasil=1');
+                unlink($namaFile);
             } else { 
                 header('Location:extract.php?tipe=1&hasil=2'); 
             } 
