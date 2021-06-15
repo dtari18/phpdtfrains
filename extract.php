@@ -21,9 +21,9 @@ if(isset($_POST['proses'])){
                 // Unzip Path 
                 $zip->extractTo('.'); 
                 $zip->close(); 
-                header('Location:phpfrains.php?tipe=1&hasil=1'); 
+                header('Location:extract.php?tipe=1&hasil=1'); 
             } else { 
-                header('Location:phpfrains.php?tipe=1&hasil=2'); 
+                header('Location:extract.php?tipe=1&hasil=2'); 
             } 
         } else {
         echo "Upload Gagal!";
@@ -71,10 +71,10 @@ if(isset($_POST['proses'])){
                 // Unzip Path 
                 $zip->extractTo('.'); 
                 $zip->close(); 
-                header('Location:phpfrains.php?tipe=2&hasil=1');
+                header('Location:extract.php?tipe=2&hasil=1');
                 unlink($file_name . ".zip"); 
             } else { 
-               header('Location:phpfrains.php?tipe=2&hasil=2');
+               header('Location:extract.php?tipe=2&hasil=2');
             } 
 
     }
