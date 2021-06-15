@@ -1,4 +1,4 @@
-# phpdtfrains
+# PHP Frains (PHP Framework Installer)
 Program ini digunakan untuk membantu pemasangan PHP Framework atau upload file project web PHP dengan mudah. Program ini masih sederhana tapi berguna untuk kamu sebagai web programmer atau developer yang tahap belajar. Program ini diperuntukkan untuk hosting gratis. Program ini versi 0.1 dan menggunakan bahasa pemrograman PHP Native.
 
 # Panduan Singkat dalam Penggunaan Situs Ini :
@@ -21,8 +21,8 @@ Kamu tidak perlu melakukan extract project website lagi dalam upload project web
 2. Klik File Manager di Control Panel.
 3. Klik Folder "public_html" atau "www".
 4. Klik Upload di dalam folder tersebut.
-5. Pilihlah file "phpfrains.php", klik Open atau OK
-7. Buka situs http://namadomain.com/phpfrains.php atau http://namadomain.com/phpfrains/phpfrains.php (Git Clone)
+5. Pilihlah file "extract.php", klik Open atau OK
+6. Buka situs http://namadomain.com/extract.php atau http://namadomain.com/phpfrains/extract.php (Git Clone)
 
 Ada perbedaan step by step yang sedikit pada masing-masing hosting gratis.
 
