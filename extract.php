@@ -40,7 +40,7 @@ if(isset($_POST['proses'])){
   
         // Inintialize directory name where 
         // file will be save 
-        $dir = './'; 
+        $dir = '.'; 
   
         // Use basename() function to return 
         // the base name of file  
@@ -108,10 +108,7 @@ if(isset($_POST['proses'])){
     <a href="phpfrains.php" class="navbar-brand">PFI</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="frains.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="#howto">How To?</a>
+        <a class="nav-link" href="phpfrains.php">Home <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
@@ -119,15 +116,10 @@ if(isset($_POST['proses'])){
 <div class="container">
   <br/>
   <div class="jumbotron">
-  <h1 class="display-5" align="center">SOLUSI UNTUK PHP FRAMEWORK KHUSUS HOSTING GRATIS</h1>
-  <p class="lead" align="center">Selamat datang di website Upload Helper dan Installer Framework Web</p>
-  <p class="lead" align="center">Website Bantuan dalam Upload Project File atau PHP Framework Installer khusus Hosting Gratis</p>
+  <h1 class="display-5" align="center">APLIKASI UNTUK INSTALL PHP FRAMEWORK KHUSUS HOSTING GRATIS</h1>
   <hr class="my-4">
-  <p>Silahkan menggunakan aplikasi web ini sebagai solusi dalam melakukan upload file atau project dengan batasan yang telah
-  ditentukan oleh pihak hosting melalui php.ini. Situs ini juga bisa memasang web berbasis framework seperti CodeIgniter atau
-   Laravel.</p>
-  <a class="btn btn-primary btn-lg" href="https://github.com/dtari18/phpfrains" target="_blank" role="button"><i class="fas fa-users"></i>&nbsp;Github</a>
-  <a class="btn btn-primary btn-lg" href="https://blog.phpfrains.my.id" target="_blank" role="button"><i class="fas fa-book-open"></i>&nbsp;Blog</a>
+  
+  <a class="btn btn-primary btn-lg" href="https://github.com/dtari18/phpfrains-with-editor" target="_blank" role="button"><i class="fas fa-users"></i>&nbsp;Github</a>
 </div>
 </div>
 <hr/>
@@ -208,16 +200,15 @@ if(isset($_POST['proses'])){
         </form>
         </div>
     </div>
-<hr/>
-</div>
-<center id="hotwo"><h3>Panduan Pemasangan Aplikasi Ini ke dalam Hosting Gratis :</h3></center><br/>
+<hr />
+<center><h3>Panduan Pemasangan Aplikasi Ini ke dalam Hosting Gratis :</h3></center><br/>
 <div class="container">
 <p>1. Masuk ke Control Panel pada hosting gratis kamu</p>
 <p>2. Klik File Manager di Control Panel.</p>
 <p>3. Klik Folder "public_html" atau "www".</p>
 <p>4. Klik Upload di dalam folder tersebut.</p>
-<p>5. Pilihlah file "phpfrains.php", klik Open atau OK</p>
-<p>6. Buka situs http://namadomain.com/phpfrains.php atau http://namadomain.com/phpfrains/phpfrains.php (Git Clone)</p>
+<p>5. Pilihlah file "extract.php", klik Open atau OK</p>
+<p>6. Buka situs http://namadomain.com/extract.php atau http://namadomain.com/phpfrains/extract.php (Git Clone)</p>
 <p>Ada perbedaan step by step yang sedikit pada masing-masing hosting gratis.</p>
 </div>
 <hr />
